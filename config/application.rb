@@ -31,5 +31,10 @@ module TestGrape
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # JWT configuration
+    config.x.jwt_salt            = "M1JWTS4LTB3T?RTHNY0UR!&*#*"
+    config.x.jwt_leeway_time     = 180 # seconds
+    config.x.jwt_token_expiration_time = 3600 * 4 # 4 hours
   end
 end
